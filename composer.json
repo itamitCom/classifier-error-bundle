@@ -1,0 +1,35 @@
+{
+  "name": "itamit/classifier-error-bundle",
+  "type": "symfony-bundle",
+  "description": "Bundle for symfony classifier error",
+  "keywords": ["classifier error"],
+  "license": "MIT",
+  "version": "dev-0.0.1",
+  "authors": [
+    {
+      "name": "Saprykin Dmitry",
+      "email": "itamit.com@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Itamit\\ClassifierErrorBundle\\": ""
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Itamit\\ClassifierErrorBundle\\": "Tests"
+    }
+  },
+  "require": {
+    "php": ">=7.2",
+    "symfony/config": "^4.2",
+    "symfony/dependency-injection": "^4.2",
+    "symfony/http-kernel": "^4.2",
+    "symfony/yaml": "^4.2"
+  },
+  "require-dev": {
+    "ext-xdebug": "*",
+    "phpunit/phpunit": "^7.5"
+  }
+}

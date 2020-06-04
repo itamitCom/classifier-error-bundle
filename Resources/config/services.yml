@@ -1,0 +1,17 @@
+services:
+  classifier_error.error_dto_factory:
+    class: Itamit\ClassifierErrorBundle\Factory\ErrorDtoFactory
+
+  classifier_error.classifier_service:
+    class: Itamit\ClassifierErrorBundle\Service\ClassifierService
+    arguments: ['@classifier_error.error_dto_factory']
+
+  classifier_error.default_error_provider:
+    class: Itamit\ClassifierErrorBundle\Provider\DefaultErrorProvider
+    tags: [{name: 'classifier_error.error_provider'}]
+
+  classifier_error.exception_listener:
+    class: Itamit\ClassifierErrorBundle\Listener\ExceptionListener
+    arguments: ['@classifier_error.classifier_service']
+    tags:
+      - { name: kernel.event_listener, event: kernel.exception, priority: 255 }
